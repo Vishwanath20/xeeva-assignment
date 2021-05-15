@@ -1,0 +1,83 @@
+<div class="container">
+    <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+
+        <p class="h4 mb-4">Sign up</p>
+
+        <div class="form-group">
+            <label for="firstname">First Name:</label>
+            <input type="text" class="form-control" id="fname" placeholder="Enter first name" formControlName="firstName">
+
+            <div *ngIf="f.firstName.touched && f.firstName.invalid" class="alert alert-danger">
+                <div *ngIf="f.firstName.errors!.required">First name is required.</div>
+                <div *ngIf="f.firstName.errors!.pattern">First name should be alphabatically only</div>
+            </div>
+
+        </div>
+
+        <div class="form-group">
+            <label for="lastname">Last Name:</label>
+            <input type="text" class="form-control" id="lname" placeholder="Enter last name" formControlName="lastName">
+
+            <div *ngIf="f.lastName.touched && f.firstName.invalid" class="alert alert-danger">
+                <div *ngIf="f.lastName.errors!.required">Last name is required.</div>
+                <div *ngIf="f.lastName.errors!.pattern">First name should be alphabatically only</div>
+            </div>
+
+        </div>
+
+        <div class="form-group">
+            <label for="mobile">Mobile Number:</label>
+            <input type="text" class="form-control" id="mobilenum" placeholder="Enter Mobile number" formControlName="mobileNum">
+
+            <div *ngIf="f.mobileNum.touched && f.mobileNum.invalid" class="alert alert-danger">
+                <div *ngIf="f.mobileNum.errors!.required">Mobile Number is required.</div>
+                <div *ngIf="f.mobileNum.errors!.pattern">Please, Enter 10 digit Mobile Number.</div>
+            </div>
+
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email Address:</label>
+            <input type="email" class="form-control" id="emailid" placeholder="Enter email" formControlName="email">
+
+            <div *ngIf="f.email.touched && f.email.invalid" class="alert alert-danger">
+                <div *ngIf="f.email.errors!.required">Email is required</div>
+                <div *ngIf="f.email.errors!.pattern">Email must be a valid email address</div>
+            </div>
+
+        </div>
+
+        <div class="form-group">
+            <label for="dob">Date of Birth:</label>
+            <input type="date" class="form-control" id="dobid" placeholder="Enter DOB" formControlName="birthDate">
+        </div>
+
+        <div class="form-group">
+            <label for="address">Address:</label>
+            <input type="text" class="form-control" id="enteraddress" placeholder="Enter Address" formControlName="Address">
+        </div>
+
+        <div class="form-group">
+            <label for="city">City:</label>
+            <input type="text" class="form-control" id="entercity" placeholder="Enter City Name" formControlName="cityName">
+        </div>
+
+        <div class="form-group">
+            <label for="state">State:</label>
+            <input type="text" class="form-control" id="enterstate" placeholder="Enter State Name" formControlName="stateName">
+        </div>
+
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" class="form-control" id="enterpwd" placeholder="Enter Password" formControlName="pass">
+        </div>
+
+        <div class="form-group">
+            <label for="confirmpassword">Confirm Password:</label>
+            <input type="password" class="form-control" id="entercpwd" placeholder="Enter confirm Password" formControlName="cpass">
+        </div>
+
+        <button class="btn btn-info my-4 btn-block " type="submit">Sign in</button>
+
+    </form>
+</div>
